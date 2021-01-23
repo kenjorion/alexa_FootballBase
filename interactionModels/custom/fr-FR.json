@@ -1,0 +1,438 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "football base",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "RegisterFavoriteTeam",
+          "slots": [
+            {
+              "name": "team",
+              "type": "footballTeam",
+              "samples": [
+                "{team}",
+                "Le nom de mon équipe est {team}"
+              ]
+            },
+            {
+              "name": "citySlot",
+              "type": "AMAZON.City",
+              "samples": [
+                "{citySlot}",
+                "{team} joue pour la ville de {citySlot}"
+              ]
+            },
+            {
+              "name": "trophies",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "De {trophies} trophées",
+                "{trophies}"
+              ]
+            }
+          ],
+          "samples": [
+            "mon équipe est {team} de {citySlot} avec {trophies} trophées",
+            "mon équipe favorite est {team} de la ville de {citySlot} qui possède {trophies} trophées.",
+            "enregistre mon équipe favorite"
+          ]
+        },
+        {
+          "name": "SayBestScorerIntent",
+          "slots": [],
+          "samples": [
+            "en Angleterre qui est le meilleur buteur de la saison dernière",
+            "Le meilleur scorer de Premier League",
+            "Qui est le meilleur buteur d\u0027Angleterre "
+          ]
+        },
+        {
+          "name": "SayMyFavoriteTeamIntent",
+          "slots": [],
+          "samples": [
+            "quelle est mon équipe favorite",
+            "dis mon équipe favorite",
+            "dis mon équipe",
+            "quelle est mon équipe"
+          ]
+        },
+        {
+          "name": "ChampionsLeagueClubIntent",
+          "slots": [
+            {
+              "name": "poules",
+              "type": "poules",
+              "samples": [
+                "{poules}"
+              ]
+            }
+          ],
+          "samples": [
+            "quelle sont les clubs de champions league ",
+            "quelle sont les clubs de la poule {poules}",
+            "dis moi les clubs de la poule {poules}",
+            "les clubs de la poule {poules}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "1",
+              "name": {
+                "value": "OG Nice"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "AS Roma"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "Borussia Dortmund"
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "Juventus"
+              }
+            },
+            {
+              "id": "5",
+              "name": {
+                "value": "Liverpool"
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "Tottenham"
+              }
+            },
+            {
+              "id": "7",
+              "name": {
+                "value": "Chelsea"
+              }
+            },
+            {
+              "id": "8",
+              "name": {
+                "value": "Athletico Madrid"
+              }
+            },
+            {
+              "id": "9",
+              "name": {
+                "value": "Arsenal"
+              }
+            },
+            {
+              "id": "10",
+              "name": {
+                "value": "Real Madrid"
+              }
+            },
+            {
+              "id": "11",
+              "name": {
+                "value": "FC Barcelone"
+              }
+            },
+            {
+              "id": "12",
+              "name": {
+                "value": "Manchester City"
+              }
+            },
+            {
+              "id": "13",
+              "name": {
+                "value": "Manchester United"
+              }
+            },
+            {
+              "id": "14",
+              "name": {
+                "value": "Naples"
+              }
+            },
+            {
+              "id": "15",
+              "name": {
+                "value": "Inter"
+              }
+            },
+            {
+              "id": "16",
+              "name": {
+                "value": "Milan AC"
+              }
+            },
+            {
+              "id": "17",
+              "name": {
+                "value": "OL"
+              }
+            },
+            {
+              "id": "18",
+              "name": {
+                "value": "OM"
+              }
+            },
+            {
+              "id": "19",
+              "name": {
+                "value": "Bayern Munich"
+              }
+            },
+            {
+              "id": "20",
+              "name": {
+                "value": "PSG"
+              }
+            }
+          ],
+          "name": "footballTeam"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Bayern Munich, Athletico Madrid, Red Bull Salzburg, Lokomotiv Moscou"
+              }
+            }
+          ],
+          "name": "PouleA"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Inter Milan, Shakhtar Donetsk, Mönchengladbach, Real Madrid"
+              }
+            }
+          ],
+          "name": "PouleB"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Manchester City, FC Porto, Olympiakos, Olympique de Marseille"
+              }
+            }
+          ],
+          "name": "PouleC"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Liverpool, Atalanta, Ajax, FC Midtjylland"
+              }
+            }
+          ],
+          "name": "PouleD"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "D "
+              }
+            },
+            {
+              "name": {
+                "value": "C"
+              }
+            },
+            {
+              "name": {
+                "value": "B"
+              }
+            },
+            {
+              "name": {
+                "value": "A"
+              }
+            }
+          ],
+          "name": "poules"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RegisterFavoriteTeam",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1519046109847"
+          },
+          "slots": [
+            {
+              "name": "team",
+              "type": "footballTeam",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1519046109847.483039998992"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1519046109847.483039998992.786367729572"
+                }
+              ]
+            },
+            {
+              "name": "citySlot",
+              "type": "AMAZON.City",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1519046109847.1173361436712"
+              }
+            },
+            {
+              "name": "trophies",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1519046109847.329529771985"
+              },
+              "validations": [
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.1519046109847.329529771985.1332881401190",
+                  "value": "0"
+                },
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.1519046109847.329529771985.78533718036",
+                  "value": "100"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ChampionsLeagueClubIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "poules",
+              "type": "poules",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.925048448903.654636327529"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.1519046109847.483039998992.786367729572",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{team} n\u0027est pas reconnu, quelle est donc votre équipe favorite ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1519046109847",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Etes-vous sûre que {team} est votre équipe favorite ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1519046109847.483039998992",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quelle est le nom de votre équipe ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1519046109847.1173361436712",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Pour quelle ville joue t-elle ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1519046109847.329529771985",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Combien de trophées dispose cette équipe ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1519046109847.329529771985.1332881401190",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{trophies} n\u0027est pas valide. Veulliez rentrer un entier"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1519046109847.329529771985.78533718036",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{trophies} est beaucoup trop élévé comme nombre O.O, soyez raisonnable"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.925048448903.654636327529",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "de quelle poule souhaitez-vous connaître la constitution ?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "14"
+}

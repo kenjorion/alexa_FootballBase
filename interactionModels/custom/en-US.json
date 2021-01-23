@@ -1,0 +1,310 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "football base",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "RegisterFavoriteTeam",
+          "slots": [
+            {
+              "name": "team",
+              "type": "footballTeam",
+              "samples": [
+                "{team}",
+                "the team name is {team}"
+              ]
+            },
+            {
+              "name": "citySlot",
+              "type": "AMAZON.City",
+              "samples": [
+                "{citySlot}",
+                "{team} play for the city of {citySlot}"
+              ]
+            },
+            {
+              "name": "trophies",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "There is {trophies} trophies",
+                "{trophies}"
+              ]
+            }
+          ],
+          "samples": [
+            "my favourite team is {team} of the city of {citySlot} that had {trophies} trophies.",
+            "save my favorite team"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "1",
+              "name": {
+                "value": "OG Nice"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "AS Roma"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "Borussia Dortmund"
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "Juventus"
+              }
+            },
+            {
+              "id": "5",
+              "name": {
+                "value": "Liverpool"
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "Tottenham"
+              }
+            },
+            {
+              "id": "7",
+              "name": {
+                "value": "Chelsea"
+              }
+            },
+            {
+              "id": "8",
+              "name": {
+                "value": "Athletico Madrid"
+              }
+            },
+            {
+              "id": "9",
+              "name": {
+                "value": "Arsenal"
+              }
+            },
+            {
+              "id": "10",
+              "name": {
+                "value": "Real Madrid"
+              }
+            },
+            {
+              "id": "11",
+              "name": {
+                "value": "FC Barcelona"
+              }
+            },
+            {
+              "id": "12",
+              "name": {
+                "value": "Manchester City"
+              }
+            },
+            {
+              "id": "13",
+              "name": {
+                "value": "Manchester United"
+              }
+            },
+            {
+              "id": "14",
+              "name": {
+                "value": "Napoli"
+              }
+            },
+            {
+              "id": "15",
+              "name": {
+                "value": "Inter"
+              }
+            },
+            {
+              "id": "16",
+              "name": {
+                "value": "Milan AC"
+              }
+            },
+            {
+              "id": "17",
+              "name": {
+                "value": "OL"
+              }
+            },
+            {
+              "id": "18",
+              "name": {
+                "value": "OM"
+              }
+            },
+            {
+              "id": "19",
+              "name": {
+                "value": "Bayern Munich"
+              }
+            },
+            {
+              "id": "20",
+              "name": {
+                "value": "PSG"
+              }
+            }
+          ],
+          "name": "footballTeam"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RegisterFavoriteTeam",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1519046109847"
+          },
+          "slots": [
+            {
+              "name": "team",
+              "type": "footballTeam",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1519046109847.483039998992"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1519046109847.483039998992.786367729572"
+                }
+              ]
+            },
+            {
+              "name": "citySlot",
+              "type": "AMAZON.City",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1519046109847.1173361436712"
+              }
+            },
+            {
+              "name": "trophies",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1519046109847.329529771985"
+              },
+              "validations": [
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.1519046109847.329529771985.1332881401190",
+                  "value": "0"
+                },
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.1519046109847.329529771985.78533718036",
+                  "value": "100"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.1519046109847.483039998992.786367729572",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{team} n\u0027est pas reconnu, quelle est donc votre équipe favorite ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1519046109847",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure that {team} is your favorite team ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1519046109847.483039998992",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your team name ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1519046109847.1173361436712",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which city your team play for ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1519046109847.329529771985",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many trophies that club has ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1519046109847.329529771985.1332881401190",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{trophies} isn\u0027t valid. Put a correct number"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1519046109847.329529771985.78533718036",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{trophies} is too high. Put a right number"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "1"
+}
